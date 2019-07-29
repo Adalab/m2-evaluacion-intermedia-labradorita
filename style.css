@@ -1,0 +1,48 @@
+.body {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: lightgrey;
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  display: flex;
+  justify-content: center;
+}
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.try {
+  color: red;
+  font-size: 35px;
+  display: flex;
+  /* top: 20px; */
+  justify-content: flex-end;
+  margin-right: 50px;
+}
+
+.resultText {
+  border: 1px solid blue;
+  color: blue;
+  margin: 80px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.numberBox {
+  margin: 20px;
+  padding: 10px;
+}
+
+.button {
+  padding: 10px;
+}
