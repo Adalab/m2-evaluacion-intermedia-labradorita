@@ -12,30 +12,33 @@ const getRandomNumber = function() {
 const randomNumber = getRandomNumber();
 console.log(randomNumber);
 
+const getInputValue = function() {
+  return parseInt(inputElement.value);
+};
+
 function numberGame(ev) {
   ev.preventDefault();
   changeText();
   addTry();
 }
 
+const inputValue = parseInt(inputElement.value);
 // debugger;
 function changeText() {
-  console.log(parseInt(inputElement.value));
-  if (parseInt(inputElement.value) > randomNumber) {
-    if (parseInt(inputElement.value) > 100 || parseInt(inputElement.value) < 1) {
-      textElement.innerHTML = "El número debe estar entre 1 y 100";
-    } else {
-      textElement.innerHTML = "Demasiado alto";
-    }
-  } else if (parseInt(inputElement.value) === randomNumber) {
+  const inputValue = getInputValue();
+  console.log(inputValue);
+  if (inputValue < 1 || inputValue > 100) {
+    textElement.innerHTML = "El número debe estar entre 1 y 100";
+  } else if (inputValue === randomNumber) {
     textElement.innerHTML = "¡HAS GANADO, CAMPEONA!";
+  } else if (inputValue > randomNumber) {
+    textElement.innerHTML = "Demasiado alto";
   } else {
     textElement.innerHTML = "Demasiado bajo";
   }
 }
 
 // function for counter
-
 function addTry() {
   if (inputElement.value) {
     acc = acc + 1;
