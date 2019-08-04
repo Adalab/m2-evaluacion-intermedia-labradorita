@@ -5,6 +5,7 @@ const tryCount = document.querySelector(".js-try");
 const buttonElement = document.querySelector(".js-button");
 const textElement = document.querySelector(".js-resultText");
 let acc = 0;
+
 // generate random number & show in console
 const getRandomNumber = function() {
   return Math.floor(Math.random() * 100);
@@ -28,14 +29,19 @@ function changeText() {
   const inputValue = getInputValue();
   console.log(inputValue);
   if (inputValue < 1 || inputValue > 100) {
-    textElement.innerHTML = "El número debe estar entre 1 y 100";
+    printText(textElement, "El número debe estar entre 1 y 100");
   } else if (inputValue === randomNumber) {
-    textElement.innerHTML = "¡HAS GANADO, CAMPEONA!";
+    printText(textElement, "¡HAS GANADO, CAMPEONA!");
   } else if (inputValue > randomNumber) {
-    textElement.innerHTML = "Demasiado alto";
+    printText(textElement, "Demasiado alto");
   } else {
-    textElement.innerHTML = "Demasiado bajo";
+    printText(textElement, "Demasiado bajo");
   }
+}
+
+// function to print the text
+function printText(textElement, feedback) {
+  textElement.innerHTML = feedback;
 }
 
 // function for counter
